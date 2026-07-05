@@ -54,19 +54,14 @@ namespace WindowsColorblindHelperUI
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void closebutton_Click(object sender, EventArgs e)
         {
-
+            this.Close();  
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void minbutton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void titlebar_Paint(object sender, PaintEventArgs e)
-        {
-
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
