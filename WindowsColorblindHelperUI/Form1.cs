@@ -15,6 +15,13 @@ namespace WindowsColorblindHelperUI
         public Form1()
         {
             InitializeComponent();
+
+            this.TopMost = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
