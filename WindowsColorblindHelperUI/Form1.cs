@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace WindowsColorblindHelperUI
 {
     public partial class Form1 : Form
     {
+        SoundPlayer player = new SoundPlayer(Properties.Resources.clicky); 
+
         // For dragging custom titlebar. I trust this I guess.
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
@@ -32,7 +35,7 @@ namespace WindowsColorblindHelperUI
             }
         }
 
-        // Shadow!!!
+        // For shadow!!!
         protected override CreateParams CreateParams
         {
             get
@@ -54,6 +57,7 @@ namespace WindowsColorblindHelperUI
             this.WindowState = FormWindowState.Minimized;
         }
 
+        // Get registry values functions
         private bool GetColorFilterActiveValue()
         {
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\ColorFiltering"))
@@ -67,7 +71,7 @@ namespace WindowsColorblindHelperUI
                     }
                 }
             }
-            return false; // key or value doesn't exist → treat as inactive
+            return false; 
         }
 
         private int? GetColorFilterTypeValue()
@@ -83,7 +87,7 @@ namespace WindowsColorblindHelperUI
                     }
                 }
             }
-            return null; // key or value doesn't exist
+            return null; 
         }
 
         bool isToggled = false;
@@ -97,28 +101,26 @@ namespace WindowsColorblindHelperUI
             this.TopMost = true;
             this.titlebar.MouseDown += new MouseEventHandler(panelTitleBar_MouseDown);
 
+            // If already toggled
             if (GetColorFilterActiveValue())
-            {
-                // Debug.WriteLine("Your debug message here");
+            {          
                 isToggled = true;
                 ToggleFilter.Image = Properties.Resources.on1;
             }
 
+            // If grayscale
             if(GetColorFilterTypeValue() == 0)
             {
-                // Debug.WriteLine("grey");
                 isGrayScale = true;
-                Grayscale.Image = Properties.Resources.on1;
+                Grayscale.Image = Properties.Resources.gray_on;
             }
 
+            // If protan
             if (GetColorFilterTypeValue() == 4)
             {
-                // Debug.WriteLine("protan");
-                Protan.Image = Properties.Resources.on1;
+                Protan.Image = Properties.Resources.pro_on;
                 isProtan = true;
             }
-
-
         }
 
         [DllImport("user32.dll")]
@@ -144,6 +146,8 @@ namespace WindowsColorblindHelperUI
 
         private void ToggleFilter_Click(object sender, EventArgs e)
         {
+            // player.Play();
+
             if (isToggled == true)
             {
                 isToggled = false;
@@ -153,8 +157,6 @@ namespace WindowsColorblindHelperUI
                 isToggled = true;
                 ToggleFilter.Image = Properties.Resources.on1;
             }
-
-
             ToggleFilter_Key();
         }
 
@@ -192,13 +194,12 @@ namespace WindowsColorblindHelperUI
                 isGrayScale = true;
                 isProtan = false;
 
-                Protan.Image = Properties.Resources.off;
-                Grayscale.Image = Properties.Resources.on1;
+                Protan.Image = Properties.Resources.pro_off;
+                Grayscale.Image = Properties.Resources.gray_on;
             } else
             {
                 return;
             }
-
 
             string command = "Set-ItemProperty -Path \"HKCU:\\Software\\Microsoft\\ColorFiltering\" -Name \"FilterType\" -Value 0";
 
@@ -230,7 +231,6 @@ namespace WindowsColorblindHelperUI
                 await Task.Delay(10);
                 ToggleFilter_Key();
             }
-
         }
 
         private async void Protan_Click(object sender, EventArgs e)
@@ -240,13 +240,12 @@ namespace WindowsColorblindHelperUI
                 isGrayScale = false;
                 isProtan = true;
 
-                Protan.Image = Properties.Resources.on1;
-                Grayscale.Image = Properties.Resources.off;
+                Protan.Image = Properties.Resources.pro_on;
+                Grayscale.Image = Properties.Resources.gray_off;
             } else
             {
                 return;
             }
-
 
             string command = "Set-ItemProperty -Path \"HKCU:\\Software\\Microsoft\\ColorFiltering\" -Name \"FilterType\" -Value 4";
 
@@ -278,8 +277,6 @@ namespace WindowsColorblindHelperUI
                 await Task.Delay(10);
                 ToggleFilter_Key();
             }
-
-
         }
     }
 }

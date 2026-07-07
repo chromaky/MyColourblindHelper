@@ -81,6 +81,35 @@ namespace WindowsColorblindHelperUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream clicky {
+            get {
+                return ResourceManager.GetStream("clicky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gray_off {
+            get {
+                object obj = ResourceManager.GetObject("gray_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gray_on {
+            get {
+                object obj = ResourceManager.GetObject("gray_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap off {
@@ -106,6 +135,26 @@ namespace WindowsColorblindHelperUI.Properties {
         internal static System.Drawing.Bitmap on1 {
             get {
                 object obj = ResourceManager.GetObject("on1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pro_off {
+            get {
+                object obj = ResourceManager.GetObject("pro_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pro_on {
+            get {
+                object obj = ResourceManager.GetObject("pro_on", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

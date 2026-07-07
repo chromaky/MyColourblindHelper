@@ -46,7 +46,7 @@
             this.titlebar.Controls.Add(this.closebutton);
             this.titlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.titlebar.Location = new System.Drawing.Point(4, 4);
-            this.titlebar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.titlebar.Margin = new System.Windows.Forms.Padding(2);
             this.titlebar.Name = "titlebar";
             this.titlebar.Size = new System.Drawing.Size(201, 27);
             this.titlebar.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.minbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minbutton.Image = global::WindowsColorblindHelperUI.Properties.Resources.app_min;
             this.minbutton.Location = new System.Drawing.Point(148, 0);
-            this.minbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.minbutton.Margin = new System.Windows.Forms.Padding(2);
             this.minbutton.Name = "minbutton";
             this.minbutton.Size = new System.Drawing.Size(27, 27);
             this.minbutton.TabIndex = 1;
@@ -72,7 +72,7 @@
             this.closebutton.ForeColor = System.Drawing.Color.White;
             this.closebutton.Image = global::WindowsColorblindHelperUI.Properties.Resources.app_x;
             this.closebutton.Location = new System.Drawing.Point(175, 0);
-            this.closebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closebutton.Margin = new System.Windows.Forms.Padding(2);
             this.closebutton.Name = "closebutton";
             this.closebutton.Size = new System.Drawing.Size(27, 27);
             this.closebutton.TabIndex = 0;
@@ -87,7 +87,7 @@
             this.panel1.Controls.Add(this.ToggleFilter);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 31);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(201, 72);
             this.panel1.TabIndex = 2;
@@ -95,7 +95,9 @@
             // Protan
             // 
             this.Protan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Protan.Image = global::WindowsColorblindHelperUI.Properties.Resources.off;
+            this.Protan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Protan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Protan.Image = global::WindowsColorblindHelperUI.Properties.Resources.pro_off;
             this.Protan.Location = new System.Drawing.Point(137, 5);
             this.Protan.Name = "Protan";
             this.Protan.Size = new System.Drawing.Size(60, 60);
@@ -106,7 +108,9 @@
             // Grayscale
             // 
             this.Grayscale.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Grayscale.Image = global::WindowsColorblindHelperUI.Properties.Resources.off;
+            this.Grayscale.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Grayscale.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Grayscale.Image = global::WindowsColorblindHelperUI.Properties.Resources.gray_off;
             this.Grayscale.Location = new System.Drawing.Point(71, 5);
             this.Grayscale.Name = "Grayscale";
             this.Grayscale.Size = new System.Drawing.Size(60, 60);
@@ -117,9 +121,11 @@
             // ToggleFilter
             // 
             this.ToggleFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ToggleFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.ToggleFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.ToggleFilter.Image = global::WindowsColorblindHelperUI.Properties.Resources.off;
             this.ToggleFilter.Location = new System.Drawing.Point(5, 5);
-            this.ToggleFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ToggleFilter.Margin = new System.Windows.Forms.Padding(2);
             this.ToggleFilter.Name = "ToggleFilter";
             this.ToggleFilter.Size = new System.Drawing.Size(60, 60);
             this.ToggleFilter.TabIndex = 0;
@@ -136,10 +142,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.titlebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.Text = "Form1";
             this.TopMost = true;
             this.titlebar.ResumeLayout(false);

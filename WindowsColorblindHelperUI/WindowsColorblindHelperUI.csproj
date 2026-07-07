@@ -101,5 +101,23 @@
   <ItemGroup>
     <None Include="Resources\off.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clicky.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pro_on.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pro_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gray_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gray_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pro_on.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
