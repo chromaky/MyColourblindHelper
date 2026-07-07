@@ -1,6 +1,6 @@
 ﻿namespace WindowsColorblindHelperUI
 {
-    partial class Form1
+    partial class FilterUI
     {
         /// <summary>
         /// Required designer variable.
@@ -91,6 +91,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(201, 72);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Protan
             // 
@@ -132,7 +133,7 @@
             this.ToggleFilter.UseVisualStyleBackColor = true;
             this.ToggleFilter.Click += new System.EventHandler(this.ToggleFilter_Click);
             // 
-            // Form1
+            // FilterUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,7 +145,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FilterUI";
             this.Padding = new System.Windows.Forms.Padding(4);
             this.Text = "Form1";
             this.TopMost = true;

@@ -14,7 +14,7 @@ using Microsoft.Win32;
 
 namespace WindowsColorblindHelperUI
 {
-    public partial class Form1 : Form
+    public partial class FilterUI : Form
     {
         SoundPlayer player = new SoundPlayer(Properties.Resources.clicky); 
 
@@ -94,9 +94,12 @@ namespace WindowsColorblindHelperUI
         bool isGrayScale = false;
         bool isProtan = false;
 
-        public Form1()
+        public FilterUI()
         {
             InitializeComponent();
+
+            this.Text = "FilterUI";
+            this.Icon = Properties.Resources.w86;
 
             this.TopMost = true;
             this.titlebar.MouseDown += new MouseEventHandler(panelTitleBar_MouseDown);
@@ -277,6 +280,11 @@ namespace WindowsColorblindHelperUI
                 await Task.Delay(10);
                 ToggleFilter_Key();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
